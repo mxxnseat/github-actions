@@ -24,6 +24,12 @@ describe("Routes test suites", ()=>{
         expect(result.body).to.equal("hello world");
     });
 
+    it("should return hello test", async ()=>{
+        const result = await chai.request(app).get("/test");
+        expect(result).status(200);
+        expect(result.body).to.equal("hello test_wrong");
+    });
+
     it("should write to file", async ()=>{
         const stub = {a: 1, b: 2, filename: "test.json"};
 

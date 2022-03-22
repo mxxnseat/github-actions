@@ -13,6 +13,10 @@ function boot(){
         res.status(200).json("hello world");
     })
 
+    app.get("/test", (req, res)=>{
+        res.status(200).json("hello test");
+    })
+
     app.post("/", (req, res)=>{
         const {filename, ...data} = req.body;
        
