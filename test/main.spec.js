@@ -27,7 +27,7 @@ describe("Routes test suites", ()=>{
     it("should return hello test", async ()=>{
         const result = await chai.request(app).get("/test");
         expect(result).status(200);
-        expect(result.body).to.equal("hello test_wrong");
+        expect(result.body).to.equal("hello test");
     });
 
     it("should write to file", async ()=>{
