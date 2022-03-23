@@ -16,13 +16,11 @@ jobs:
         uses: actions/setup-node@v2
 
         with:
+          test: test_value
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm ci
       - run: npm test
-        with:
-          env:
-            test: test_value
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
