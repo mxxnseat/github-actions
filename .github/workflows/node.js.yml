@@ -13,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup env
-        run: |
-          touch .env
-          echo test=${{ secrets.TEST_2 }} >> .env
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -23,3 +20,5 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm test
+        env:
+          test: ${{ secrets.TEST_2 }}
