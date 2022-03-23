@@ -15,7 +15,7 @@ jobs:
       - name: Setup env
         run: |
           touch .env
-          echo test=${{ secrets.TEST }} >> .env
+          echo test=${{ secrets.TEST_2 }} >> .env
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
